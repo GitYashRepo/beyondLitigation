@@ -2,14 +2,8 @@ export default function Hero() {
    return (
       <section className="relative w-full h-[800px] min-h-[80vh] flex items-center bg-[#050505] overflow-hidden">
          {/* Background Image with Overlay */}
-         <div className="absolute inset-0 z-0">
-            <img
-               src="/homepage/justice-law.jpg"
-               alt="Justice Statue"
-               className="w-full h-full object-cover object-center opacity-40"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#050505] via-[#050505]/80 to-transparent"></div>
-         </div>
+         <div className="absolute inset-0 z-0 bg-[url('/homepage/justice-law.jpg')] bg-fixed bg-cover bg-center opacity-40"></div>
+         <div className="absolute inset-0 z-0 bg-gradient-to-r from-[#050505] via-[#050505]/20 to-transparent pointer-events-none"></div>
 
          {/* Content */}
          <div className="relative z-10 mx-auto w-full max-w-[1200px] px-6 xl:px-0 pt-20">

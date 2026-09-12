@@ -1,7 +1,45 @@
+"use client";
+import { useState } from "react";
 import { FaFacebook, FaLinkedin, FaTwitter, FaInstagram } from "react-icons/fa";
 
 
+
 export default function ContactFormSection() {
+   const [formData, setFormData] = useState({ name: "", email: "", phone: "", message: "" });
+   const [isSubmitting, setIsSubmitting] = useState(false);
+   const [statusMessage, setStatusMessage] = useState(null);
+
+   const handleChange = (e) => {
+      setFormData({ ...formData, [e.target.id]: e.target.value });
+   };
+
+   const handleSubmit = async (e) => {
+      e.preventDefault();
+      setIsSubmitting(true);
+      setStatusMessage(null);
+
+      try {
+         const response = await fetch("/api/contact", {
+            method: "POST",
+            headers: {
+               "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData),
+         });
+
+         if (response.ok) {
+            setStatusMessage({ type: "success", text: "Message sent successfully!" });
+            setFormData({ name: "", email: "", phone: "", message: "" });
+         } else {
+            setStatusMessage({ type: "error", text: "Failed to send message. Please try again later." });
+         }
+      } catch (error) {
+         setStatusMessage({ type: "error", text: "An error occurred. Please try again later." });
+      } finally {
+         setIsSubmitting(false);
+      }
+   };
+
    return (
       <section className="relative w-full flex flex-col">
          {/* Top half with white background */}
@@ -14,25 +52,24 @@ export default function ContactFormSection() {
                      Get In Touch
                   </h2>
                   <p className="text-sm text-foreground mb-10 leading-relaxed font-light max-w-sm">
-                     Duis aute irure dolor in reprehenderit in<br />
-                     voluptate velit esse cillum dolore eu fugiat.
+                     Our experienced team is ready to assist you with expert legal guidance.
                   </p>
 
                   <div className="flex flex-col gap-8">
                      <div>
                         <h4 className="font-serif text-sm font-bold text-foreground mb-1">Phone</h4>
-                        <p className="font-serif text-2xl text-foreground font-bold">929-242-6868</p>
+                        <p className="font-serif text-2xl text-foreground font-bold"><a href="tel:+917499443178">+91 74994 43178</a></p>
                      </div>
 
                      <div>
                         <h4 className="font-serif text-sm font-bold text-foreground mb-1">Email</h4>
-                        <p className="font-serif text-2xl text-foreground font-bold">contact@example.com</p>
+                        <p className="font-serif text-2xl text-foreground font-bold"><a href="mailto:beyondlitigation@gmail.com">beyondlitigation@gmail.com</a></p>
                      </div>
 
                      <div>
                         <h4 className="font-serif text-sm font-bold text-foreground mb-1">Address</h4>
                         <p className="font-serif text-2xl text-foreground font-bold leading-tight max-w-xs">
-                           123 Fifth Avenue, NY City, NY 10160
+                           Connaught Place, New Delhi, Delhi-110001, India
                         </p>
                      </div>
 
@@ -57,29 +94,35 @@ export default function ContactFormSection() {
                      </h2>
                      <div className="w-12 h-px bg-foreground/20 mb-8"></div>
 
-                     <form className="flex flex-col gap-6">
+                     {statusMessage && (
+                        <div className={`mb-6 p-4 text-sm font-medium border ${statusMessage.type === 'success' ? 'bg-green-50 text-green-700 border-green-200' : 'bg-red-50 text-red-700 border-red-200'}`}>
+                           {statusMessage.text}
+                        </div>
+                     )}
+
+                     <form onSubmit={handleSubmit} className="flex flex-col gap-6">
                         <div className="flex flex-col gap-2">
                            <label htmlFor="name" className="text-[10px] text-muted-foreground uppercase tracking-wider">Name *</label>
-                           <input type="text" id="name" className="w-full bg-[#F5F5F5] border border-transparent focus:border-primary focus:bg-white transition-colors px-4 py-3 outline-none text-sm" />
+                           <input type="text" id="name" value={formData.name} onChange={handleChange} required className="w-full bg-[#F5F5F5] border border-transparent focus:border-primary focus:bg-white transition-colors px-4 py-3 outline-none text-sm" />
                         </div>
 
                         <div className="flex flex-col gap-2">
                            <label htmlFor="email" className="text-[10px] text-muted-foreground uppercase tracking-wider">Email *</label>
-                           <input type="email" id="email" className="w-full bg-[#F5F5F5] border border-transparent focus:border-primary focus:bg-white transition-colors px-4 py-3 outline-none text-sm" />
+                           <input type="email" id="email" value={formData.email} onChange={handleChange} required className="w-full bg-[#F5F5F5] border border-transparent focus:border-primary focus:bg-white transition-colors px-4 py-3 outline-none text-sm" />
                         </div>
 
                         <div className="flex flex-col gap-2">
                            <label htmlFor="phone" className="text-[10px] text-muted-foreground uppercase tracking-wider">Phone Number *</label>
-                           <input type="tel" id="phone" className="w-full bg-[#F5F5F5] border border-transparent focus:border-primary focus:bg-white transition-colors px-4 py-3 outline-none text-sm" />
+                           <input type="tel" id="phone" value={formData.phone} onChange={handleChange} required className="w-full bg-[#F5F5F5] border border-transparent focus:border-primary focus:bg-white transition-colors px-4 py-3 outline-none text-sm" />
                         </div>
 
                         <div className="flex flex-col gap-2">
-                           <label htmlFor="message" className="text-[10px] text-muted-foreground uppercase tracking-wider">Message</label>
-                           <textarea id="message" rows="5" className="w-full bg-[#F5F5F5] border border-transparent focus:border-primary focus:bg-white transition-colors px-4 py-3 outline-none text-sm resize-none"></textarea>
+                           <label htmlFor="message" className="text-[10px] text-muted-foreground uppercase tracking-wider">Message *</label>
+                           <textarea id="message" value={formData.message} onChange={handleChange} required rows="5" className="w-full bg-[#F5F5F5] border border-transparent focus:border-primary focus:bg-white transition-colors px-4 py-3 outline-none text-sm resize-none"></textarea>
                         </div>
 
-                        <button type="submit" className="bg-[#E8C45F] text-white px-8 py-3 text-[11px] font-semibold tracking-widest uppercase transition-colors hover:bg-[#d4b050] self-start mt-2">
-                           Submit
+                        <button type="submit" disabled={isSubmitting} className="bg-[#E8C45F] text-white px-8 py-3 text-[11px] font-semibold tracking-widest uppercase transition-colors hover:bg-[#d4b050] self-start mt-2 disabled:opacity-70 disabled:cursor-not-allowed">
+                           {isSubmitting ? "Submitting..." : "Submit"}
                         </button>
                      </form>
                   </div>

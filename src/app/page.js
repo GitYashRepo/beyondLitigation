@@ -4,7 +4,6 @@ import PracticeAreas from "@/components/PracticeAreas";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import Stats from "@/components/Stats";
 import Testimonials from "@/components/Testimonials";
-import ClientLogos from "@/components/ClientLogos";
 import Attorneys from "@/components/Attorneys";
 import ContactCTA from "@/components/ContactCTA";
 
@@ -17,7 +16,6 @@ export default function Home() {
       <WhyChooseUs />
       <Stats />
       <Testimonials />
-      {/* <ClientLogos /> */}
       <Attorneys />
       <ContactCTA />
     </>
