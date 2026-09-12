@@ -1,13 +1,10 @@
 const practices = [
-  { id: ".01", title: "Antitrust & Competition" },
-  { id: ".02", title: "Bankruptcy &\nRestructuring" },
-  { id: ".03", title: "International Trade\nLitigation" },
-  { id: ".04", title: "Class Action Litigation" },
-  { id: ".05", title: "Investment Fund Litigation" },
-  { id: ".06", title: "Transnational Litigation" },
-  { id: ".07", title: "Insurance & Reinsurance\nLitigation" },
-  { id: ".08", title: "Employment Litigation &\nCounseling" },
-  { id: ".09", title: "Media & Entertainment\nLitigation" },
+  { id: ".01", title: "Court Marriage &\nRegistration", description: "Get your marriage registered seamlessly with our expert legal assistance.", price: "₹100,000.00" },
+  { id: ".02", title: "Documentation", description: "Get your drafts and legal documents professionally prepared.", price: "₹20,000.00" },
+  { id: ".03", title: "Family &\nMatrimonial", description: "Get your matrimonial and family disputes resolved with our expert advice.", price: "₹100,000.00" },
+  { id: ".04", title: "Property Dispute", description: "Get your property disputes resolved efficiently and effectively.", price: "₹50,000.00" },
+  { id: ".05", title: "Bail & Parole", description: "Get bail for criminal matters with our specialized legal representation.", price: "₹50,000.00" },
+  { id: ".06", title: "Legal Consultation", description: "Get your legal queries answered by our experienced advocates.", price: "₹5,000.00" },
 ];
 
 export default function PracticeGrid() {
@@ -18,7 +15,7 @@ export default function PracticeGrid() {
         {/* Section Heading */}
         <div className="mb-20 text-center flex flex-col items-center">
           <h2 className="text-4xl md:text-5xl font-serif text-foreground mb-6">
-            We Are Experts In:
+            Our Services
           </h2>
           <div className="w-12 h-0.5 bg-primary"></div>
         </div>
@@ -30,17 +27,17 @@ export default function PracticeGrid() {
             return (
               <div 
                 key={index} 
-                className={`flex flex-col p-8 md:p-6 ${isHighlighted ? "bg-white shadow-[0_20px_50px_rgba(0,0,0,0.05)]" : ""}`}
+                className={`flex flex-col p-8 md:p-6 ${isHighlighted ? "bg-white shadow-[0_20px_50px_rgba(0,0,0,0.05)] rounded-lg" : ""}`}
               >
-                <span className="text-4xl text-muted-foreground/30 font-serif mb-4">{item.id}</span>
+                <div className="flex justify-between items-start mb-4">
+                  <span className="text-4xl text-muted-foreground/30 font-serif">{item.id}</span>
+                  <span className="text-xs font-semibold text-primary px-3 py-1 bg-primary/10 rounded-full">{item.price}</span>
+                </div>
                 <h3 className="text-lg font-serif text-foreground font-bold mb-4 whitespace-pre-line leading-tight">
                   {item.title}
                 </h3>
-                <p className="text-muted-foreground text-xs leading-relaxed font-medium">
-                  Lorem ipsum dolor sit amet,<br className="hidden lg:block"/>
-                  consectetur adipisicing elit, sed do<br className="hidden lg:block"/>
-                  eiusmod tempor incididunt ut labore et<br className="hidden lg:block"/>
-                  dolore.
+                <p className="text-muted-foreground text-sm leading-relaxed font-medium">
+                  {item.description}
                 </p>
               </div>
             );
