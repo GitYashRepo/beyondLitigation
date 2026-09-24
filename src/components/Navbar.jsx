@@ -16,9 +16,10 @@ export default function Navbar() {
 
    return (
       <header className="absolute top-0 left-0 right-0 z-50 w-full pt-6">
-         <div className="mx-auto flex w-full max-w-[1200px] items-center justify-between px-6 xl:px-0">
+         <div className="mx-auto flex w-full items-center justify-between px-16">
             <Link href="/" className="flex items-center">
-               <img src="/images/logo.svg" alt="Law Firm" className="h-10 w-auto" />
+               <img src="/logo.png" alt="Law Firm" className="h-10 w-auto rounded-md" />
+               <p className="text-white text-lg font-semibold pl-4">BEYOND LITIGATION</p>
             </Link>
 
             {/* Desktop Navigation */}
