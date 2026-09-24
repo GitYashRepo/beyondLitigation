@@ -6,7 +6,7 @@ export default function PracticeHero() {
          <div className="absolute inset-0 z-0 bg-gradient-to-r from-[#050505] via-[#050505]/20 to-transparent pointer-events-none"></div>
 
          {/* Content */}
-         <div className="relative z-10 mx-auto w-full max-w-[1000px] px-6 xl:px-0 pt-20">
+         <div className="relative z-10 mx-auto w-full  px-20 pt-20">
             <h1 className="text-5xl md:text-6xl font-serif text-white leading-[1.1] mb-6">
                Our Services
             </h1>

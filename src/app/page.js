@@ -3,9 +3,8 @@ import AboutFirm from "@/components/AboutFirm";
 import PracticeAreas from "@/components/PracticeAreas";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import Stats from "@/components/Stats";
-import Testimonials from "@/components/Testimonials";
-import Attorneys from "@/components/Attorneys";
 import ContactCTA from "@/components/ContactCTA";
+import PracticeTestimonials from "@/components/PracticeTestimonials";
 
 export default function Home() {
   return (
@@ -15,8 +14,7 @@ export default function Home() {
       <PracticeAreas />
       <WhyChooseUs />
       <Stats />
-      <Testimonials />
-      <Attorneys />
+      <div className="pt-20"><PracticeTestimonials/></div>
       <ContactCTA />
     </>
   );

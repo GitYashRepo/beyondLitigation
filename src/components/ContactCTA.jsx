@@ -1,7 +1,7 @@
 export default function ContactCTA() {
    return (
       <section className="w-full bg-background pt-16 pb-24 border-b border-border/40">
-         <div className="mx-auto flex w-full max-w-[1000px] flex-col text-center px-6 xl:px-0">
+         <div className="mx-auto flex w-full  flex-col text-center px-20">
 
             {/* Heading */}
             <div className="mb-16">
@@ -9,7 +9,7 @@ export default function ContactCTA() {
                   Do You Need Legal<br />Help?
                </h2>
                <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-                  Click edit button to change this text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis.
+                  Whether you are facing a criminal charge, navigating a family dispute, buying or selling property, or seeking assistance with commercial legal matters — we are here to provide clear, strategic, and effective legal support.
                </p>
             </div>
 
@@ -28,7 +28,7 @@ export default function ContactCTA() {
 
                <div className="flex flex-col items-center pt-8 md:pt-0">
                   <h4 className="text-lg font-serif text-foreground mb-3">Visit Us At</h4>
-                  <p className="text-muted-foreground font-medium">Connaught Place, New Delhi, Delhi-110001, India</p>
+                  <p className="text-muted-foreground font-medium">SP-07, Sector 116 Noida <br /> C-222, Civil wings, Tis Hazari Courts Delhi-54</p>
                </div>
 
             </div>
