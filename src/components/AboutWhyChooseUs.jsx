@@ -84,7 +84,7 @@ export default function AboutWhyChooseUs() {
 
                      <p className="text-xs text-foreground font-light leading-relaxed">
                         We approach every case with preparation, attention to detail,
-                        and a clear strategy focused on protecting our clients'
+                        and a clear strategy focused on protecting our clients&apos;
                         interests.
                      </p>
                   </div>
