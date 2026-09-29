@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const practices = [
    {
       id: ".01",
@@ -101,58 +103,62 @@ export default function PracticeGrid() {
 
                {practices.map((item, index) => {
                   const isHighlighted = index == [0] || index == [1] || index == [2] || index == [3] || index == [4] || index == [5] || index == [6] || index == [7];
+                  const slug = item.title.toLowerCase().replace(/[^a-z0-9]+/g, '-');
 
                   return (
-                     <div
-                        key={item.id}
-                        className={`group flex flex-col p-8 transition-all duration-300 ${isHighlighted
-                           ? "rounded-lg bg-white shadow-[0_20px_50px_rgba(0,0,0,0.06)]"
-                           : "border-t border-border"
-                           }`}
-                     >
+                     <Link href={`/our-services/${slug}`} key={item.id} className="block group">
+                        <div
+                           className={`h-full flex flex-col p-8 transition-all duration-300 ${isHighlighted
+                              ? "rounded-lg bg-white shadow-[0_20px_50px_rgba(0,0,0,0.06)] group-hover:-translate-y-2 group-hover:shadow-[0_30px_60px_rgba(0,0,0,0.1)]"
+                              : "border-t border-border group-hover:border-primary"
+                              }`}
+                        >
 
-                        {/* Number */}
-                        <div className="mb-7 flex items-start justify-between">
-                           <span className="font-serif text-4xl text-muted-foreground/30">
-                              {item.id}
-                           </span>
+                           {/* Number */}
+                           <div className="mb-7 flex items-start justify-between">
+                              <span className="font-serif text-4xl text-muted-foreground/30 transition-colors duration-300 group-hover:text-primary/30">
+                                 {item.id}
+                              </span>
 
-                           <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-primary">
-                              Legal Services
-                           </span>
-                        </div>
+                              <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-primary">
+                                 Legal Services
+                              </span>
+                           </div>
 
-                        {/* Title */}
-                        <h3 className="mb-5 font-serif text-2xl font-bold leading-tight text-foreground transition-colors duration-300 group-hover:text-primary">
-                           {item.title}
-                        </h3>
+                           {/* Title */}
+                           <h3 className="mb-5 font-serif text-2xl font-bold leading-tight text-foreground transition-colors duration-300 group-hover:text-primary">
+                              {item.title}
+                           </h3>
 
-                        {/* Description */}
-                        <p className="mb-7 text-sm font-medium leading-7 text-muted-foreground">
-                           {item.description}
-                        </p>
-
-                        {/* Service List */}
-                        <div className="mt-auto">
-                           <p className="mb-4 text-[10px] font-semibold uppercase tracking-[0.2em] text-foreground">
-                              Areas Covered
+                           {/* Description */}
+                           <p className="mb-7 text-sm font-medium leading-7 text-muted-foreground">
+                              {item.description}
                            </p>
 
-                           <ul className="space-y-2.5">
-                              {item.services.map((service) => (
-                                 <li
-                                    key={service}
-                                    className="flex items-start gap-3 text-sm leading-5 text-muted-foreground"
-                                 >
-                                    <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-primary" />
+                           {/* Service List */}
+                           <div className="mt-auto">
+                              <p className="mb-4 text-[10px] font-semibold uppercase tracking-[0.2em] text-foreground">
+                                 Areas Covered
+                              </p>
 
-                                    <span>{service}</span>
-                                 </li>
-                              ))}
-                           </ul>
+                              <ul className="space-y-2.5">
+                                 {item.services.map((service) => (
+                                    <li
+                                       key={service}
+                                       className="flex items-start gap-3 text-sm leading-5 text-muted-foreground"
+                                    >
+                                       <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-primary" />
+                                       <span>{service}</span>
+                                    </li>
+                                 ))}
+                              </ul>
+                              <div className="mt-8 flex items-center text-primary font-semibold text-sm tracking-wider uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                 Learn More <span className="ml-2">→</span>
+                              </div>
+                           </div>
+
                         </div>
-
-                     </div>
+                     </Link>
                   );
                })}
 
