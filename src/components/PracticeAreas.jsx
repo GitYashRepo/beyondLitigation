@@ -83,7 +83,7 @@ const practices = [
 export default function PracticeAreas() {
    return (
       <section className="relative w-full bg-background py-20 md:py-28">
-         <div className="mx-auto w-full px-16">
+         <div className="mx-auto w-full px-4 md:px-16">
 
             {/* Header */}
             <div className="mb-16 max-w-3xl">

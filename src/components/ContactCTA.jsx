@@ -1,7 +1,7 @@
 export default function ContactCTA() {
    return (
       <section className="w-full bg-background pt-16 pb-24 border-b border-border/40">
-         <div className="mx-auto flex w-full  flex-col text-center px-20">
+         <div className="mx-auto flex w-full flex-col text-center px-4 md:px-16">
 
             {/* Heading */}
             <div className="mb-16">

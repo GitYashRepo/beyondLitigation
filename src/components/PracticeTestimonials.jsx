@@ -28,7 +28,7 @@ export default function PracticeTestimonials() {
 
    return (
       <section className="w-full bg-background">
-         <div className="mx-auto flex w-full flex-col px-20 md:flex-row">
+         <div className="mx-auto flex w-full flex-col px-4 md:px-16 md:flex-row">
 
             {/* Left Column - Testimonials */}
             <div className="mb-16 w-full pr-0 md:mb-0 md:w-1/2 md:pr-16">

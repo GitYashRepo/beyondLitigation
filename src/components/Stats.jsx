@@ -77,7 +77,7 @@ export default function Stats() {
    return (
       <section
          ref={sectionRef}
-         className="relative w-full px-20"
+         className="relative w-full px-4 md:px-16"
       >
          <div className="mx-auto w-full  -mt-16 relative z-20">
             <div className="bg-white shadow-xl flex flex-col md:flex-row items-center justify-between py-10 px-8 divide-y md:divide-y-0 md:divide-x divide-border">
