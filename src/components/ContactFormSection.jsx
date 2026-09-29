@@ -88,7 +88,7 @@ export default function ContactFormSection() {
 
                {/* Right Column - Form Container */}
                <div className="w-full lg:w-1/2 lg:absolute lg:top-[-4rem] lg:right-0 z-20">
-                  <div className="bg-white p-10 md:p-14 shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-border/30 w-full h-full min-h-[600px]">
+                  <div className="bg-white p-6 md:p-14 shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-border/30 w-full h-full min-h-[600px]">
                      <h2 className="text-4xl font-serif text-foreground mb-6">
                         Message Us
                      </h2>
