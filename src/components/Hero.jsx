@@ -14,7 +14,7 @@ export default function Hero() {
                <h1 className="text-3xl md:text-5xl font-serif text-white leading-[1.1] mb-4">
                   We Are A Global Force In Legal Defense
                </h1>
-               <p className="text-white/70 text-lg md:text-lg mb-4 max-w-3xl font-light leading-relaxed text-justify">
+               <p className="text-white/70 text-sm md:text-lg mb-4 max-w-3xl font-light leading-relaxed text-justify">
                   At Beyond Litigation, we understand that legal matters are not just about paperwork or proceedings — they are about people, businesses, rights, and decisions that matter. Our role is to understand your situation, identify the legal requirements, and guide you through the appropriate legal process.
                </p>
                <a
