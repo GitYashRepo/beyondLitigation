@@ -6,7 +6,7 @@ export default function ContactHero() {
          <div className="absolute inset-0 z-0 bg-gradient-to-r from-[#050505] via-[#050505]/20 to-transparent pointer-events-none"></div>
 
          {/* Content */}
-         <div className="relative z-10 mx-auto w-full  px-20 pt-20">
+         <div className="relative z-10 mx-auto w-full px-4 md:px-16 pt-20">
             <h1 className="text-5xl md:text-6xl font-serif text-white leading-[1.1] mb-6">
                Contact
             </h1>
