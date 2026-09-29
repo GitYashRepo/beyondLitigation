@@ -1,7 +1,7 @@
 export default function OurHistory() {
    return (
       <section className="w-full bg-background pt-24 pb-16">
-         <div className="mx-auto w-full px-20">
+         <div className="mx-auto w-full px-4 md:px-16">
 
             {/* Header */}
             <div className="mb-16">

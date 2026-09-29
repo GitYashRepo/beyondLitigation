@@ -43,11 +43,11 @@ export default function ContactFormSection() {
    return (
       <section className="relative w-full flex flex-col">
          {/* Top half with white background */}
-         <div className="w-full bg-white pt-24 pb-32 lg:pb-48">
-            <div className="mx-auto flex w-full  flex-col lg:flex-row px-20 relative">
+         <div className="w-full bg-white pt-12 md:pt-24 pb-24 md:pb-32 lg:pb-48">
+            <div className="mx-auto flex w-full flex-col lg:flex-row px-4 md:px-16 relative">
 
                {/* Left Column - Contact Details */}
-               <div className="w-full lg:w-1/2 pr-0 lg:pr-16 mb-16 lg:mb-0">
+               <div className="w-full lg:w-1/2 pr-0 lg:pr-16 mb-12 md:mb-16 lg:mb-0">
                   <h2 className="text-3xl md:text-4xl font-serif text-foreground mb-4">
                      Get In Touch
                   </h2>

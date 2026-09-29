@@ -3,7 +3,7 @@ import { GraduationCap, Scale, Briefcase } from "lucide-react";
 export default function AboutWhyChooseUs() {
    return (
       <section className="w-full bg-background pt-24 pb-20">
-         <div className="mx-auto flex w-full  flex-col md:flex-row px-20">
+         <div className="mx-auto flex w-full flex-col md:flex-row px-4 md:px-16">
 
             {/* Left Column - Heading */}
             <div className="w-full md:w-1/3 mb-16 md:mb-0">

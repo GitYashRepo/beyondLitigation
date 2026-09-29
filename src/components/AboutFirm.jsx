@@ -1,10 +1,10 @@
 export default function AboutFirm() {
    return (
-      <section className="relative w-full bg-background pt-24 pb-32">
-         <div className="mx-auto flex w-full flex-col md:flex-row px-16">
+      <section className="relative w-full bg-background py-20">
+         <div className="mx-auto flex w-full flex-col md:flex-row px-4 md:px-16">
 
             {/* Left Content */}
-            <div className="w-full md:w-1/2 md:pr-16 pt-12">
+            <div className="w-full md:w-1/2 md:pr-16 pt-12 md:pt-20">
                <h2 className="text-4xl md:text-5xl font-serif text-foreground leading-[1.1] mb-6">
                   About The Firm
                </h2>

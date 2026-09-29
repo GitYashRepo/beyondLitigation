@@ -81,8 +81,8 @@ export default function AboutStatistics() {
          ref={sectionRef}
          className="w-full bg-background pb-32"
       >
-         <div className="mx-auto w-full  px-20">
-            <div className="bg-[#000000] py-12 px-6 flex flex-col md:flex-row items-center justify-between divide-y md:divide-y-0 md:divide-x divide-[#ffffff]/10">
+         <div className="mx-auto w-full px-4 md:px-16">
+            <div className="bg-[#000000] py-12 flex flex-col md:flex-row items-center justify-between divide-y md:divide-y-0 md:divide-x divide-[#ffffff]/10">
                {stats.map((stat, index) => (
                   <div
                      key={index}
